@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         System.out.println("Выберите напиток :");
         System.out.println(" 1 : Эспрессо  ");
         System.out.println(" 2 : Американо  ");
@@ -12,17 +13,23 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
-         String resept;
+        Choice_recipe choice_recipe = new Choice_recipe();
 
-
-        switch (a) {
-            case 1 -> resept = "минимально неразделимый процесс";
-            case 2 -> resept = "эспрессо + добавление воды";
-            case 3 -> resept = "эспрессо + добавление вспененного молока";
-            case 4 -> resept = "выбор чайного пакетика + добавление воды";
-            default -> resept = "ищите другой автомат";
-        }
-        System.out.println(resept);
-
+        System.out.println(choice_recipe.getChoice(a));
     }
+}
+class Choice_recipe {
+       public String getChoice (int a){
+        String recipe;
+            switch (a) {
+            case 1 -> recipe = "минимально неразделимый процесс";
+            case 2 -> recipe = "эспрессо + добавление воды";
+            case 3 -> recipe = "эспрессо + добавление вспененного молока";
+            case 4 -> recipe = "выбор чайного пакетика + добавление воды";
+            default -> recipe = "ищите другой автомат";
+            }
+        return recipe;
+        }
+
+
 }
